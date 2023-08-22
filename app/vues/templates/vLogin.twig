@@ -1,0 +1,24 @@
+<div class="login-box">
+	<h1>Login</h1>
+	<form method="POST" action="admin?entite=utilisateur&action=c">
+
+  <br><span class="erreur-rouge">&nbsp;{{ messageErreurConnexion }}</span>
+
+
+		<label>Courriel</label>
+		<input name="utilisateur_courriel" type="email" value="{{ utilisateur.utilisateur_courriel }}" placeholder="">
+
+    <label>Mot de passe</label>
+		<input name="utilisateur_mdp" type="password" value="{{ utilisateur.utilisateur_mdp }}" placeholder="">
+
+		<input
+		class="submit cinzel-police bouton-voir-catalogue bouton" type="submit" value="Soumettre">
+	<!-- <closeform></closeform> -->
+	</form>
+  <br>
+  <p class="para-2">
+	Vous n'êtes pas encore membre? <br>
+	<a href="register" class="hover-effect-transform">Enregistrez-vous içi</a>
+</p>
+</div>
+

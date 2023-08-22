@@ -1,0 +1,33 @@
+.biographie__conteneur {
+  display: flex;
+  gap: 110px;
+}
+
+.biographie__display {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.biographie__photo-shadow {
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px, rgb(51, 51, 51) 0px 0px 0px 3px;
+}
+
+.grille__biographie {
+  display: flex;
+}
+
+.grille__biographie-grid {
+  display: grid;
+}
+
+.paragraphe__carre {
+  text-align: justify;
+  max-width: 70ch;
+}
+
+@media screen and (max-width: 1150px) {
+  .biographie__conteneur {
+    flex-direction: column;
+
+  }
+}

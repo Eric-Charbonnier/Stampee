@@ -1,0 +1,315 @@
+<script src="js/script.js"></script>
+
+<!-- ********** ENCHERE ******** -->
+
+<main>
+
+	<div class="hero-enchere hero--titre-catalogue">
+		<div class="lot couleur-main">
+			<h1>Lot #{{ timbre.timbre_lot }}</h1>
+			<div class="separation"></div>
+			<h1 class="hero--titre-catalogue">{{ timbre.timbre_titre }}</h1>
+		</div>
+
+	</div>
+	<div class="conteneur">
+		<div class="fil-arianne">
+			<a class="fil-arianne-item" href="accueil">Accueil</a>
+			<a class="fil-arianne-item" href="#">{{ timbre.timbre_pays }}</a>
+		</div>
+		<div class="retour-margin-top">
+			<a href="catalogue" class="couleur-hover">↩︎ Retour au catalogue</a>
+		</div>
+	</div>
+
+	<section class="section__enchere">
+		<div class="conteneur">
+
+
+			<div class="galerie__container">
+				<div id="img-container">
+					<div id="lens"></div>
+					<img id="featured" class="enchere__img hover-opacite" src="{{timbre.image_url}}" alt="The Bluenose">
+				</div>
+				<div class="galerie__nav">
+					<div class="fleche-centre retirer-850px">
+						<a>▲</a>
+					</div>
+					<div>
+						<a><img class="hover-opacite" width="100" src="assets/img/jpg/encheres/thumbnail-enchere-1.jpg" alt="image de l'enchère 1"></a>
+					</div>
+					<div>
+						<a><img class="hover-opacite" width="100" src="assets/img/jpg/encheres/thumbnail-enchere-7.jpg" alt="image de l'enchère 7"></a>
+					</div>
+					<div>
+						<a><img class="hover-opacite" width="100" src="assets/img/jpg/encheres/thumbnail-enchere-3.jpg" alt="image de l'enchère 3"></a>
+					</div>
+					<div>
+						<a><img class="hover-opacite retirer-850px" width="100" src="assets/img/jpg/encheres/thumbnail-enchere-8.jpg" alt="image de l'enchère 8"></a>
+					</div>
+					<div>
+						<a><img class="hover-opacite retirer-850px" width="100" src="assets/img/jpg/encheres/thumbnail-enchere-9.jpg" alt="image de l'enchère 9"></a>
+					</div>
+					<div class="fleche-centre retirer-850px">
+						<a>▼</a>
+					</div>
+				</div>
+
+				<div class="enchere__conteneur">
+					<div class="enchere__texte">
+						<div class="enchere__extra">
+							<div class="hover-opacite">
+								<a href="#"><img width="25" src="./assets/img/png/info.png" alt="icone informations">
+									<p class="cinzel-police couleur-main retirer-850px">Informations</p>
+								</a>
+							</div>
+							<div class="hover-opacite">
+								<a href="#"><img width="25" src="./assets/img/png/icone-vendeur.png" alt="icone vendeur">
+									<p class="cinzel-police couleur-main">Vendeur</p>
+								</a>
+							</div>
+							<div class="hover-opacite">
+								<a href="#"><img width="25" src="./assets/img/png/history-icon.png" alt="icone historique">
+									<p class="cinzel-police couleur-main retirer-850px">Historique</p>
+								</a>
+							</div>
+							<div class="hover-opacite">
+								<a class="" href="#"><img width="25" src="./assets/img/png/livraison.png" alt="icone infos">
+									<p class="cinzel-police couleur-main">Livraison</p>
+								</a>
+							</div>
+						</div>
+
+
+						<h2 class="taille-titre">{{ timbre.timbre_titre }}</h2>
+						<h3 class="coup-coeur">🎖 Coups de cœur du Lord 🎖</h3><br><br>
+						<p>Mise courante |
+							<strong>{{ miseCount.totalMise }}</strong>
+						</p><br>
+						{% if mise > 0 %}
+							<h3 class="taille-prix">{{ mise.mise_montant }}$</h3>
+						{% else %}
+							<h3 class="taille-prix">{{ timbre.timbre_prix }}$</h3>
+						{% endif %}
+						<p>
+							<small>dernière offre par
+								{{ mise.utilisateur_prenom }}
+								{{ mise.utilisateur_nom }}</small>
+						</p><br>
+						<p>
+							<strong>Description</strong>
+							:
+							{{ timbre.timbre_description }}</p><br>
+						<strong>Condition</strong>
+						:
+						{{ timbre.timbre_condition }}</p>
+					<strong>Année d'émission</strong>
+					:
+					{{ timbre.timbre_date }}</p>
+				<p>
+					<strong>Pays d'origine</strong>
+					:
+					{{ timbre.timbre_pays }}</p>
+			</div>
+
+
+			<div class="mise__texte">
+				<div class="mise__extra">
+					<div>
+						<a class="hover-opacite" href="#"><img width="25" src="./assets/img/png/miser-icon.png" alt="icone miser">
+							<p class="cinzel-police hover-opacite">enchère en cours</p>
+						</a>
+					</div>
+				</div>
+				<p class="couleur-rouge">
+					<strong>Ferme dans</strong>
+					:
+				</p>
+				<strong>Début:</strong>
+				{{ timbre.enchere_debut }}<br>
+				<strong>Fin:</strong>
+				{{ timbre.enchere_fin }}<br><br>
+				<p>
+					<strong>Pays d'envoi</strong>
+					:
+					{{ timbre.timbre_pays }}</p>
+				<p>
+					<strong>Livraison</strong>
+					: Gratuite</p>
+				<p>
+					<strong>Certification garantie</strong>
+				</p>
+				<br>
+				<div class="favoris-coeur favoris-coeur-gros">
+					<img class="hover-effect-transform" src="./assets/img/png/coeur-icone-doigt.png" alt="icone coeur favoris">
+				</div>
+				<br>
+				{% if utilisateur|length > 0 %}
+
+					<div class="enchere-prix">
+
+						<form method="POST" action="mise?entite=mise&action=a&timbre_id={{timbre.timbre_id}}">
+							<input type="hidden" name="utilisateur_id" value={{ utilisateur.utilisateur_id }}>
+							<input type="hidden" name="enchere_id" value={{ timbre.Enchere_enchere_id }}>
+							<label>Entrez une mise</label>
+							<input name="mise_montant" type="number" value="" placeholder="min 1＄" class="form-margin-bottom">
+							<input class="submit cinzel-police bouton-voir-catalogue bouton" type="submit" value="MISER!">
+							<br><br>
+						</div>
+					</form>
+
+				{% else %}
+					<div class="enchere-prix">
+						<a href="login" class="bouton cinzel-police">
+							Connectez-vous pour miser</a><br><br>
+					</div>
+				{% endif %}
+				<br>
+
+			</div>
+		</div>
+	</div>
+</div></section><!-- Même catégories --><section class="section__autre-categorie">
+<div class="conteneur">
+	<h2 class="titre-marge-style">Dans la même catégorie</h2>
+	<div class="cartes__boite row">
+
+
+		{% for timbre in memeCategorie %}
+			<article
+				class="carte__width carte__style">
+				{# <a href="enchere?timbre_id={{timbre.timbre_id}}"> #}
+				<a
+					href="enchere?enchere_id={{timbre.Enchere_enchere_id}}">
+					{# <a href="enchere?timbre_id={{timbre.timbre_id}}&enchere_id={{timbre.Enchere_enchere_id}}"> #}
+					<div class="carte__image"><img class="enchere__img" src={{timbre.image_url}} alt={{timbre.timbre_titre}} title={{timbre.timbre_titre}}></div>
+
+					<div class="carte__contenu">
+						<div class="carte__titre cinzel-police">
+							<strong>Lot#
+								{{timbre.timbre_lot}}</strong>
+							|
+							{{timbre.timbre_titre}}</div>
+						<div class="carte__description"></div>
+
+						{# <p>● Mise courante |
+													<strong>1 offre</strong>
+												</p> #}
+						<h4>Prix |
+							<strong>{{timbre.timbre_prix}}$</strong>
+						</h4>
+						<p class="couleur-rouge">
+							<strong>Ferme le:</strong><br>
+							{{timbre.enchere_fin}}</p><br>
+						<div class="favoris-coeur">
+							<img class="hover-effect-transform" src="./assets/img/png/coeur-icone-doigt.png" alt="icone coeur favoris">
+						</div>
+					</div>
+				</a>
+			</article>
+		{% endfor %}
+
+
+	</div>
+</div></section></main>
+
+					<script>
+						document.getElementById('img-container').addEventListener('mouseover', function () {
+imageZoom('featured')
+
+})
+
+function imageZoom(imgID) {
+let img = document.getElementById(imgID)
+let lens = document.getElementById('lens')
+
+lens.style.backgroundImage = `url( ${
+img.src
+} )`
+
+let ratio = 3
+
+lens.style.backgroundSize = (img.width * ratio) + 'px ' + (
+img.height * ratio
+) + 'px';
+
+img.addEventListener("mousemove", moveLens)
+lens.addEventListener("mousemove", moveLens)
+img.addEventListener("touchmove", moveLens)
+
+function moveLens() {
+/*
+        Function sets sets position of lens over image and background image of lens
+        1 - Get cursor position
+        2 - Set top and left position using cursor position - lens width & height / 2
+        3 - Set lens top/left positions based on cursor results
+        4 - Set lens background position & invert
+        5 - Set lens bounds
+    
+        */
+
+// 1
+let pos = getCursor()
+// console.log('pos:', pos)
+
+// 2
+let positionLeft = pos.x -(lens.offsetWidth / 2)
+let positionTop = pos.y -(lens.offsetHeight / 2)
+
+// 5
+if (positionLeft < 0) {
+positionLeft = 0
+}
+
+if (positionTop < 0) {
+positionTop = 0
+}
+
+if (positionLeft > img.width - lens.offsetWidth / 3) {
+positionLeft = img.width - lens.offsetWidth / 3
+}
+
+if (positionTop > img.height - lens.offsetHeight / 3) {
+positionTop = img.height - lens.offsetHeight / 3
+}
+
+
+// 3
+lens.style.left = positionLeft + 'px';
+lens.style.top = positionTop + 'px';
+
+// 4
+lens.style.backgroundPosition = "-" + (
+pos.x * ratio
+) + 'px -' + (
+pos.y * ratio
+) + 'px'
+}
+
+function getCursor() { /* Function gets position of mouse in dom and bounds
+        of image to know where mouse is over image when moved
+        
+        1 - set "e" to window events
+        2 - Get bounds of image
+        3 - set x to position of mouse on image using pageX/pageY - bounds.left/bounds.top
+        4- Return x and y coordinates for mouse position on image
+        
+         */
+
+let e = window.event
+let bounds = img.getBoundingClientRect()
+
+// console.log('e:', e)
+// console.log('bounds:', bounds)
+let x = e.pageX - bounds.left
+let y = e.pageY - bounds.top
+x = x - window.pageXOffset;
+y = y - window.pageYOffset;
+
+return {'x': x, 'y': y}
+}
+
+}
+
+imageZoom('featured')
+					</script>

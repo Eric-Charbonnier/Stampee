@@ -1,0 +1,145 @@
+/* ------------------------------- */
+/* boutons
+/* ------------------------------- */
+
+.bouton {
+  background-color: var(--bleuFonceBoutons);
+  border: 1px solid var(--beigeBoutons);
+  color: var(--beigeBoutons);
+  font-size: 16px;
+  text-transform: uppercase;
+  padding: 20px;
+  width: 273px;
+  text-align: center;
+  border-radius: 5px;
+}
+
+.bouton:hover {
+  background-color: var(--beigeBoutons);
+  color: var(--bleuFonceBoutons);
+  border: 1px solid var(--bleuFonceBoutons);
+  cursor: pointer;
+}
+
+.bouton-favoris {
+  background-color: #efe8f4;
+  color: var(--bleuFonceBoutons);
+  border: 1px solid var(--bleuFonceBoutons);
+  cursor: pointer;
+  font-size: 14px;
+  padding: 15px;
+}
+.bouton-favoris:hover {
+  background-color: #d7c6e4;
+  border: 1px solid var(--bleuFonceBoutons);
+  color: #7a5700;
+}
+
+.bouton-voir-catalogue {
+  background-color: var(--bleuFonceBoutons);
+  border: 1px solid var(--beigeBoutons);
+  color: var(--beigeBoutons);
+  font-size: 16px;
+  text-transform: uppercase;
+  padding: 13px;
+  border-radius: 5px;
+}
+.bouton-recherche {
+  background-color: var(--bleuFonceBoutons);
+  border: 1px solid var(--beigeBoutons);
+  color: var(--beigeBoutons);
+  font-size: 14px;
+  text-transform: uppercase;
+  padding: 4px;
+  border-radius: 5px;
+}
+
+.bouton-recherche-ajust {
+  background-color: #1f284c;
+  color: #d39b34;
+  width: 100%;
+}
+.bouton-recherche-ajust:hover {
+  background-color: var(--beigeBoutons);
+  color: var(--bleuFonceBoutons);
+  border: 1px solid var(--bleuFonceBoutons);
+  cursor: pointer;
+}
+
+.bouton-voir-inscription {
+  background-color: var(--bleuFonceBoutons);
+  border: 1px solid var(--beigeBoutons);
+  color: var(--beigeBoutons);
+  font-size: 16px;
+  text-transform: uppercase;
+  padding: 6px;
+  border-radius: 5px;
+}
+
+.bouton-voir-inscription:hover {
+  cursor: pointer;
+  background-color: #f9e6b8;
+  color: var(--bleuFonceBoutons);
+  border: 1px solid var(--bleuFonceBoutons);
+}
+
+input {
+  border: 2px solid var(--bleuFonceBoutons);
+  padding: 10px;
+  /* background-color: #f4efdf; */
+  color: var(--bleuFonceBoutons);
+  border: 1px solid var(--bleuFonceBoutons);
+  width: fit-content;
+}
+
+.btn__affichage--conteneur {
+  display: flex;
+  flex-basis: 100%;
+  justify-content: flex-end;
+  gap: 5px;
+}
+
+.btn__affichage--style {
+  display: flex;
+  width: 60px;
+  border: none;
+  /* color: var(--bleuFonceSecondaire); */
+  outline: none;
+  padding: 12px 16px;
+  background-color: rgb(32, 50, 91, 0.1);
+  cursor: pointer;
+  border-radius: 3px;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  background-color: #f9e6b8;
+  color: var(--bleuFonceBoutons);
+  border: 1px solid var(--bleuFonceBoutons);
+  justify-content: center;
+}
+
+.btn__top {
+  margin-top: 30px;
+}
+
+.btn__page-membre {
+    background-color: var(--blueFonceSecondaire);
+    border: 1px solid var(--beigeBoutons);
+    color: var(--beigeBoutons);
+    font-size: 16px;
+    text-transform: uppercase;
+    padding: 2px;
+    width:fit-content;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+@media screen and (max-width: 850px) {
+  .bouton-voir-catalogue {
+    font-size: 14px;
+    padding: 10px;
+  }
+  .btn__affichage--conteneur {
+    width: 100px;
+  }
+}

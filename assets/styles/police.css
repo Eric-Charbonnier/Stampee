@@ -1,0 +1,35 @@
+.police__taille--13px {
+  font-size: 13px;
+}
+.police__taille--14px {
+  font-size: 14px;
+}
+.police__taille--16px {
+  font-size: 16px;
+}
+.police__taille--18px {
+  font-size: 18px;
+}
+.police__taille--20px {
+  font-size: 20px;
+}
+.police__taille--25px {
+  font-size: 25px;
+}
+.police__taille--31px {
+  font-size: 31px;
+}
+.police__taille--39px {
+  font-size: 39px;
+}
+.police__taille--48px {
+  font-size: 48px;
+}
+
+.police__couleur-logo {
+  color: #d1d2d6;
+}
+
+.cinzel-police {
+  font-family: "Cinzel", sans-serif;
+}

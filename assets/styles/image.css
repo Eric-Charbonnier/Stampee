@@ -1,0 +1,14 @@
+.img__logo {
+  width: 160px;
+}
+
+.img__logo:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+@media screen and (max-width: 850px) {
+  .img__logo {
+    width: 160px;
+    margin-top: 70px;
+  }
+}

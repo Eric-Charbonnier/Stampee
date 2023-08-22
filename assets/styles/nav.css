@@ -1,0 +1,231 @@
+/* ------------------------------- */
+/* Top Nav
+/* ------------------------------- */
+.nav__header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.nav__superieur-background-color {
+  background-color: var(--bleuFoncePrincipal);
+}
+
+.nav__background-color {
+  background-color: var(--blueFonceSecondaire);
+}
+
+.nav__logo {
+  padding: 2em 0em;
+}
+
+nav a {
+  color: #fcf4e2;
+}
+
+nav a:hover {
+  color: whitesmoke;
+}
+
+.nav__stampee {
+  padding: 3em 0em;
+  display: flex;
+  height: 90%;
+  align-items: center;
+  align-self: center;
+  flex-direction: row;
+  gap: 15px;
+  flex-wrap: wrap;
+  /* align-items: baseline; */
+}
+
+.nav__stampee h1 {
+  font-size: 34px;
+  font-family: "Cinzel", sans-serif;
+  font-weight: 300;
+  color: #d1d2d6;
+  padding-top: 5px;
+}
+
+.nav__stampee--display {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: 10px;
+}
+
+/* ------------------------------- */
+/* navigation principale
+/* ------------------------------- */
+.nav-principale {
+  align-items: center;
+  /* height: 120px; */
+  display: flex;
+  background-color: var(--blueFonceSecondaire);
+  color: var(--beigeBoutons);
+  height: 60px;
+  gap: 60px;
+  flex-wrap: nowrap;
+  flex-direction: row;
+}
+
+nav a:active {
+  opacity: 0.7;
+}
+
+/* menu mobile */
+.menu-cache-add {
+  display: none;
+}
+
+/* ------------------------------- */
+/* sous menu / drop down
+/* ------------------------------- */
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  border-radius: 5px;
+  position: absolute;
+  transition: max-height 0.5s ease-in-out 0s;
+  background-color: var(--blueFonceSecondaire);
+  opacity: 0.9;
+  box-shadow: 0px 8px 16px 0px rgb(0 0 0 / 20%);
+  margin: 2px;
+  z-index: 1;
+  width: -webkit-fill-available;
+}
+
+.dropdown-content a {
+  padding: 12px 10px 12px 10px;
+  display: block;
+  margin: 0;
+  text-align: center;
+  line-height: 22px;
+  text-decoration: none;
+}
+
+.dropdown-content a:hover {
+  color: whitesmoke;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.menu-cache-add {
+  display: none;
+}
+
+@media screen and (min-width: 1000px) {
+  .nav__header {
+    column-gap: 6em;
+    flex-direction: row;
+    row-gap: 6em;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .nav__header,
+  .nav-principale {
+    flex-direction: column;
+    text-align: center;
+    position: fixed;
+    inset: 0;
+    padding: 60px;
+    transition: opacity 00ms ease-in-out;
+    z-index: 1;
+    min-height: 100%;
+    margin: 0 0vw;
+    gap: 70px;
+  }
+
+  .dropdown-content {
+    flex-direction: column;
+
+    border-radius: 5px;
+    position: absolute;
+    transition: max-height 0.5s ease-in-out 0s;
+    background-color: var(--blueFonceSecondaire);
+    opacity: 0.9;
+    box-shadow: 0px 8px 16px 0px rgb(0 0 0 / 20%);
+    margin: 2px;
+    z-index: 1;
+    width: -webkit-fill-available;
+  }
+
+  .nav__stampee {
+    justify-content: center;
+    max-height: 0px;
+
+}
+
+.recherche > input {
+  width: 240px;
+}
+
+  input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    padding: 5px;
+    border-radius: 3px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 2;
+
+    background-color: var(--bleuFonceBoutons);
+    border: 1px solid var(--beigeBoutons);
+    color: var(--beigeBoutons);
+    font-size: 14px;
+
+    padding: 10px;
+  }
+
+  input[type="checkbox"]::before {
+    content: "Menu mobile";
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  input:hover {
+    background-color: var(--beigeBoutons);
+    color: var(--bleuFonceBoutons);
+    border: 1px solid var(--bleuFonceBoutons);
+    cursor: pointer;
+  }
+
+  input[type="checkbox"]:checked::before {
+    content: "Fermer";
+    cursor: pointer;
+  }
+
+  input[type="checkbox"]:not(:checked) ~ nav {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .hidden {
+    background-color: #464e2e;
+  }
+
+  .hidden img {
+    width: 100px;
+  }
+
+  .menu-cache {
+    display: none;
+  }
+
+  .menu-cache-add {
+    /* margin-top: 60px; */
+    display: block;
+  }
+  .menu-cache-add > a {
+    display: block;
+    padding-bottom: 20px;
+    font-size: 16px;
+  }
+}

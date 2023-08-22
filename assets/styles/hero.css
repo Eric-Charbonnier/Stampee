@@ -1,0 +1,89 @@
+.hero-index {
+  background-image: linear-gradient(
+      rgba(0, 0, 0, 0.85) 100%,
+      rgba(0, 0, 0, 0) 10%
+    ),
+    url(../img/jpg/hero-index-t.jpg);
+  background-size: cover;
+  padding-top: 130px;
+  padding-bottom: 130px;
+}
+
+.hero__texte-jaune {
+  color: #d49b34;
+}
+
+.hero__texte-beige {
+  color: var(--beigeArriereSection);
+}
+
+.hero-biographie {
+  background-image: linear-gradient(
+      rgba(0, 0, 0, 0.85) 100%,
+      rgba(0, 0, 0, 0) 10%
+    ),
+    url(../img/jpg/bio-back.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 130px;
+  padding-bottom: 130px;
+}
+
+.hero--titre,
+.hero--titre-catalogue {
+  display: flex;
+  justify-content: center;
+  font-size: 30px;
+}
+
+.hero--titre-index {
+  display: flex;
+  font-size: 30px;
+  flex-direction: row;
+}
+
+.hero-enchere {
+  /* background-attachment: scroll; */
+  background-image: linear-gradient(
+      rgba(0, 0, 0, 0.8) 100%,
+      rgba(0, 0, 0, 0) 10%
+    ),
+    url(../img/jpg/hero-enchere.jpg);
+  background-size: cover;
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+.hero-catalogue {
+  background-image: linear-gradient(
+      rgba(0, 0, 0, 0.8) 100%,
+      rgba(0, 0, 0, 0) 10%
+    ),
+    url(../img/jpg/officiers.jpg);
+  background-size: cover;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  height: 260px;
+}
+
+.hero--titre h1 {
+  color: var(--bleuFonceBoutons);
+  /* text-shadow: 1px 1px 0px #e3d5d5; */
+  padding-top: 0;
+}
+
+.hero--titre-catalogue h1 {
+  color: #d49c35;
+  /* text-shadow: 1px 1px 0px #e3d5d5; */
+  padding-top: 0;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.separation {
+  border-right: 1px solid #d49b34;
+  width: 5px;
+  height: 35px;
+  position: relative;
+  margin: 0 25px;
+}

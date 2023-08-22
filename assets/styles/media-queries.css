@@ -1,0 +1,29 @@
+@media screen and (min-width: 300px) and (max-width: 1280px) {
+  .retirer-du-media-cell {
+    display: none;
+  }
+
+  .nav-principale a {
+    font-size: 14px;
+  }
+  .footer__nav,
+  .footer__top-nav {
+    flex-direction: column;
+    margin: unset;
+  }
+}
+
+@media screen and (min-width: 300px) and (max-width: 1150px) {
+  /* header {
+    overflow: hidden;
+  } */
+    .titre-marge-style {
+      font-size: 25px;
+  
+  }
+}
+@media screen and (max-width: 850px) {
+  .retirer-850px{
+    display: none;
+  }
+}

@@ -1,0 +1,51 @@
+{# // <script>
+// 	history.pushState({}, '', 'admin?entite=utilisateur')
+// </script> #}
+<div class="signup-box">
+	<h1>Modifiez vos informations</h1>
+
+	<form method="POST" action="membre?entite=utilisateur&action=m">
+  <input type="hidden" name="utilisateur_id" value={{ utilisateur.utilisateur_id }}>
+
+		<label>Prénom</label>
+		<input name="utilisateur_prenom" value="{{ utilisateur.utilisateur_prenom }}">
+		<span class="erreur-rouge">&nbsp;{{ erreurs.utilisateur_prenom }}</span>
+
+		<label>Nom</label>
+		<input name="utilisateur_nom" value="{{ utilisateur.utilisateur_nom }}">
+		<span class="erreur-rouge">&nbsp;{{ erreurs.utilisateur_nom }}</span>
+
+		<label>Courriel</label>
+		<input name="utilisateur_courriel" value="{{ utilisateur.utilisateur_courriel }}">
+		<span class="erreur-rouge">&nbsp;{{ erreurs.utilisateur_courriel }}</span>
+
+		<label>Mot de passe</label>
+		<input name="utilisateur_mdp" type="password" value="" placeholder="">
+    <span class="erreur-rouge">&nbsp;{{ erreurs.utilisateur_mdp }}</span>
+		{# <a href="catalogue" class="cinzel-police bouton-voir-catalogue bouton">Voir notre catalogue</a> #}
+		{# <label>Confirmez le mot de passe</label>
+				<input type="password" placeholder=""> #}<label>Profil
+		</label>
+			<select name="Role_role_id"> <option value="1">Administrateur</option>
+			<option value="2">Membre</option>
+			<option value="3">Vendeur</option>
+		</select>
+		<span>&nbsp;{{ erreurs.Role_role_id }}</span>
+
+		<input
+		class="submit cinzel-police bouton-voir-catalogue bouton" type="submit" value="Soumettre">
+	<!-- <closeform></closeform> -->
+	</form>
+	<p><br>
+		En cliquant sur le bouton S'inscrire, vous acceptez nos
+
+		<a href="#">Termes et Conditions</a>
+		&
+		<a href="#">Politique de confidentialité</a>
+	</p>
+	<br>
+	<p class="para-2">
+		Déjà membre?
+		<br><a href="login">Connectez-vous içi</a>
+	</p>
+</div>

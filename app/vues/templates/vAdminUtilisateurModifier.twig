@@ -1,0 +1,42 @@
+<section>
+	<h1>{{ titre|upper }}</h1>
+
+	<form method="POST" action="admin?entite=utilisateur&action=m&utilisateur_id={{ utilisateur.utilisateur_id }}">
+
+		<form method="POST" action="admin?entite=utilisateur&action=a">
+
+			<label>Nom</label>
+			<input name="utilisateur_nom" value="{{ utilisateur.utilisateur_nom }}">
+			<span>&nbsp;{{ erreurs.utilisateur_nom }}</span>
+
+			<label>Prénom</label>
+			<input name="utilisateur_prenom" value="{{ utilisateur.utilisateur_prenom }}">
+			<span>&nbsp;{{ erreurs.utilisateur_prenom }}</span>
+
+			<label>Courriel</label>
+			<input name="utilisateur_courriel" value="{{ utilisateur.utilisateur_courriel }}">
+			<span>&nbsp;{{ erreurs.utilisateur_courriel }}</span>
+
+			<label>Profil</label>
+			<select name="utilisateur_profil">
+				{% if utilisateur.utilisateur_profil == constant('Utilisateur::PROFIL_UTILISATEUR') %}
+					<option value="utilisateur" selected>Utilisateur</option>
+          <option value="administrateur">Administrateur</option>
+          <option value="editeur">Éditeur</option>
+				{% elseif utilisateur.utilisateur_profil == constant('Utilisateur::PROFIL_EDITEUR') %}
+					<option value="editeur" selected>Éditeur</option>
+          <option value="administrateur">Administrateur</option>
+          <option value="utilisateur">Utilisateur</option>
+				{% elseif utilisateur.utilisateur_profil == constant('Utilisateur::PROFIL_ADMINISTRATEUR') %}
+					<option value="administrateur" selected>Administrateur</option>
+          <option value="editeur">Éditeur</option>
+          <option value="utilisateur">Utilisateur</option>
+          {% endif %}
+				</select>
+				<span>&nbsp;{{ erreurs.utilisateur_profil }}</span>
+
+				<input type="hidden" name="utilisateur_id" value="{{ utilisateur.utilisateur_id }}">
+				<br>
+				<input type="submit" value="Envoyer">
+			</form>
+		</section>

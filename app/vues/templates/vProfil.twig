@@ -1,0 +1,71 @@
+{# // <script>
+// 	history.pushState({}, '', 'admin?entite=utilisateur')
+// </script> #}
+{# {{ utilisateur | json_encode(constant('JSON_PRETTY_PRINT')) }} #}
+<body>
+	<div class="container-membre">
+		<div class="box">
+			<img src="./assets/img/svg/profil.svg" alt="photo-profil">
+			<ul>
+				<li>{{ utilisateur.utilisateur_prenom }}</li>
+				<li>{{ utilisateur.utilisateur_nom }}</li>
+				<li>{{ utilisateur.utilisateur_courriel }}</li>
+				<li>{{ utilisateur.role_nom }}</li>
+        <br>
+        <span class="cinzel-police btn__page-membre bouton"> <a href="membre?entite=utilisateur&action=l&utilisateur_id={{ utilisateur.utilisateur_id }}">modifier</a></span>
+				<li>
+					<i style="font-size:20px; color:#fcf4e2" class="fa">&#xf230;</i>
+					<i style="font-size:20px; color:#fcf4e2" class="fa">&#xf0d5;</i>
+					<i style="font-size:20px; color:#fcf4e2" class="fa">&#xf0e1;</i>
+				</li>
+			</ul>
+		</div>
+		<div class="About">
+			<ul>
+				<h1>À propos</h1>
+			</ul>
+			<ul>
+				<h3>Enchère(s) en cours :</h3>
+				{% for enchere in encheres %}
+					<li>● #<strong>{{enchere.timbre_lot}}</strong>
+						|
+						<strong>{{enchere.timbre_titre}}</strong>
+						|
+						<strong>{{enchere.timbre_prix}}$</strong>, en date du
+						<strong>{{enchere.enchere_debut}}</strong>
+						et se terminant le
+						<strong>{{enchere.enchere_fin}}</strong>
+						<div class="membre__profil--display">
+							<span class="cinzel-police btn__page-membre bouton"> <a href="membre?entite=enchere&action=l&enchere_id={{ enchere.Enchere_enchere_id }}&utilisateur_id={{ utilisateur.utilisateur_id }}">modifier</a></span>
+
+							<span class="confirmer cinzel-police btn__page-membre bouton" data-href="membre?entite=enchere&action=s&enchere_id={{ enchere.Enchere_enchere_id }}&utilisateur_id={{ utilisateur.utilisateur_id }}">supprimer</span>
+						</div>
+					</li>
+					<br>
+				{% endfor %}
+			</ul>
+			<br>
+			<ul>
+				<h3>Mise(s) en cours :</h3>
+				{% for mise in mises %}
+					<li>● Vous avez misé:
+						<strong>{{mise.mise_montant}}$</strong>
+						sur l'enchère
+						<strong>#{{mise.timbre_lot}}</strong> | <strong>{{mise.timbre_titre}}</strong>, en date du
+						<strong>{{mise.mise_date}}</strong>
+						<div class="membre__profil--display">
+
+							<span class="confirmer cinzel-police btn__page-membre bouton" data-href="membre?entite=mise&action=s&mise_id={{ mise.mise_id }}&utilisateur_id={{utilisateur.utilisateur_id}}">supprimer</span>
+							{# <input class="submit cinzel-police btn__page-membre bouton" type="submit" value="modifier"> #}
+						</div>
+					</li>
+					<br>
+				{% endfor %}
+			</ul>
+			{# <ul>
+				<h3>Favoris</h3>
+				<li>...</li>
+			</ul> #}
+		</div>
+		{{ include("modaleSuppression.twig") }}</body>
+</body></div></body>

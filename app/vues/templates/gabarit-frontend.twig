@@ -1,0 +1,242 @@
+{# // <script>
+// history.pushState({}, '', 'admin?entite=utilisateur')
+// </script> #}
+
+<!DOCTYPE html>
+<html lang="fr">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>Site d'enchère du Lord Stampee</title>
+		<meta name="description" content="Page d'accueil">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<link rel="stylesheet" href="./assets/styles/main.css">
+		<link rel="stylesheet" href="./assets/styles/footer.css">
+		<link rel="stylesheet" href="./assets/styles/media-queries.css">
+		<link rel="stylesheet" href="./assets/styles/carte.css">
+		<link rel="stylesheet" href="./assets/styles/actualite.css">
+		<link rel="stylesheet" href="./assets/styles/filtres.css">
+		<link rel="stylesheet" href="./assets/styles/police.css">
+		<link rel="stylesheet" href="./assets/styles/couleur.css">
+		<link rel="stylesheet" href="./assets/styles/galerie.css">
+		<link rel="stylesheet" href="./assets/styles/boutons.css">
+		<link rel="stylesheet" href="./assets/styles/enchere.css">
+		<link rel="stylesheet" href="./assets/styles/hero.css">
+		<link rel="stylesheet" href="./assets/styles/nav.css">
+		<link rel="stylesheet" href="./assets/styles/biographie.css">
+		<link rel="stylesheet" href="./assets/styles/image.css">
+		<link rel="stylesheet" href="./assets/styles/recherche.css">
+		<link rel="stylesheet" href="./assets/styles/mise.css">
+		<link rel="stylesheet" href="./assets/styles/filArianne.css">
+		<link rel="stylesheet" href="./assets/styles/register.css">
+	{# <link rel="stylesheet" href="./assets/styles/frontend.css"> #}
+		{# <link rel="stylesheet" href="./assets/styles/admin.css"> #}
+		{# <link rel="stylesheet" href="./assets/styles/erreur.css"> #}
+    {#  <script src="js/script.js"></script> #}
+
+	</head>
+
+	<body>
+		<input type="checkbox" class="menu-cache-add">
+		<nav class="nav__background-color">
+
+			<div class="nav__superieur-background-color">
+				<div class="nav__header conteneur">
+					<div class="nav__logo retirer-du-media-cell">
+						<a href="accueil"><img class="img__logo hover-opacite hover-effect-transform" src="./assets/img/png/LS-logo.png" alt="Logo Stampee"></a>
+					</div>
+					<div class="nav__stampee">
+
+						{% if utilisateur|length > 0 %}
+							<div class="connexion_style-display">
+								<span class="connexion_style cinzel-police police__taille--20px">{{ utilisateur.utilisateur_prenom }}
+									{{ utilisateur.utilisateur_nom }}</span>
+								<p class="connexion_style-role cinzel-police police__taille--16px">{{ utilisateur.role_nom }}</p>
+								<a href="profilMembre?utilisateur_id={{utilisateur.utilisateur_id}}">
+									<p class="police__couleur-logo cinzel-police police__taille--14px pointer hover-opacite hover-effect-border">Mon profil</p>
+								</div>
+								<a href="admin?entite=utilisateur&action=d">
+									<p class="police__couleur-logo cinzel-police police__taille--16px hover-opacite hover-effect-border">Se déconnecter</p>
+								</a>
+
+							{% else %}
+
+								<div class="nav__stampee--display police__taille--20px"></div>
+								<a href="login">
+									<p class="police__couleur-logo cinzel-police police__taille--16px hover-opacite">Se connecter pour enchérir</p>
+								</a>
+								<div class="separation"></div>
+								<a href="register">
+									<p class="police__couleur-logo cinzel-police police__taille--16px hover-opacite">Devenir membre</p>
+								</a>
+
+							{% endif %}
+
+							<form class="recherche__display recherche police__taille--16px" action="rechercherEnchere?entite=enchere&action=r" method="POST">
+								<input class="cinzel-police" type="text" name="inputRechercher" placeholder="Trouvez une enchère">
+								<span><br>
+									<input class="cinzel-police bouton-recherche-ajust" type="submit" value="Rechercher">
+                {# <a href="#" class="submit cinzel-police bouton-recherche bouton" type="submit" value="Soumettre">rechercher</a> #}
+								</span>
+							</form>
+						</div>
+					</div>
+				</div>
+
+				<!-- <nav class="nav__background-color"> -->
+				<div class="nav-principale cinzel-police conteneur">
+					<div class="dropdown">
+						<a href="catalogue" class="dropbtn hover-effect-border police__taille--18px hover-opacite">CATALOGUE D’ENCHÈRES</a>
+						<div class="dropdown-content dropdown__padding--catalogue">
+							<a class="police__taille--14px hover-opacite" href="catalogue">ENCHÈRES EN COURS</a>
+							<a class="police__taille--14px hover-opacite" href="#">ENCHÈRES ARCHIVÉES</a>
+							{% if utilisateur|length > 0 %}
+								<a class="police__taille--14px hover-opacite" href="placerEnchere">PLACER UNE ENCHÈRE</a>
+							{% else %}
+								<a class="police__taille--14px hover-opacite" href="register">PLACER UNE ENCHÈRE</a>
+							{% endif %}
+						</div>
+					</div>
+
+					<div class="dropdown">
+						<a href="#" class="dropbtn hover-effect-border police__taille--18px hover-opacite">FONCTIONNEMENT</a>
+						<div class="dropdown-content dropdown__padding--fonctionnement">
+							<a class="police__taille--14px hover-opacite" href="#">COMMENT PLACER UNE OFFRE</a>
+							<a class="police__taille--14px hover-opacite" href="#">TERMES ET CONDITIONS</a>
+							<a class="police__taille--14px hover-opacite" href="#">AIDE</a>
+						</div>
+					</div>
+
+					<div class="dropdown retirer-du-media-cell">
+						<a href="#" class="dropbtn hover-effect-border police__taille--18px hover-opacite">À PROPROS DU LORD STAMPEE III</a>
+						<div class="dropdown-content dropdown__padding--apropos">
+							<a class="police__taille--14px hover-opacite" href="#">LA PHILATÉLIE, C'EST LA VIE</a>
+							<a class="police__taille--14px hover-opacite" href="#bio-ancre">BIOGRAPHIE DU LORD</a>
+							<a class="police__taille--14px hover-opacite" href="#">HISTORIQUE FAMILIAL</a>
+						</div>
+					</div>
+
+					<div class="dropdown">
+						<a href="#" class="dropbtn hover-effect-border police__taille--18px hover-opacite">CONTACTEZ-NOUS</a>
+						<div class="dropdown-content dropdown__padding--apropos">
+							<a class="police__taille--14px hover-opacite" href="#">ANGLETERRE</a>
+							<a class="police__taille--14px hover-opacite" href="#">CANADA</a>
+							<a class="police__taille--14px hover-opacite" href="#">US</a>
+							<a class="police__taille--14px hover-opacite" href="#">AUSTRALIE</a>
+						</div>
+					</div>
+				</div>
+
+
+				<div class="menu-cache-add">
+
+					<div class="nav-principale cinzel-police conteneur">
+						<div class="dropdown">
+							<a href="catalogue" class="dropbtn hover-effect-border police__taille--18px hover-opacite">CATALOGUE D’ENCHÈRES</a>
+							<div class="dropdown-content dropdown__padding--catalogue"></div>
+						</div>
+
+						<div class="dropdown">
+							<a href="#" class="dropbtn hover-effect-border police__taille--18px hover-opacite">FONCTIONNEMENT</a>
+							<div class="dropdown-content dropdown__padding--fonctionnement"></div>
+						</div>
+
+						<div class="dropdown">
+							<a href="#bio-ancre" class="dropbtn hover-effect-border police__taille--18px hover-opacite">À PROPROS DU LORD STAMPEE III</a>
+							<div class="dropdown-content dropdown__padding--apropos"></div>
+						</div>
+
+						<div class="dropdown">
+							<a href="#" class="dropbtn hover-effect-border police__taille--18px hover-opacite">CONTACTEZ-NOUS</a>
+							<div class="dropdown-content dropdown__padding--apropos"></div>
+						</div>
+
+						<div class="nav__stampee">
+							<div class="nav__stampee--display police__taille--20px"></div>
+							<p class="police__couleur-logo cinzel-police police__taille--16px hover-opacite">→ Se connecter pour enchérir</p>
+							<!-- <div class="separation"></div> -->
+							<p class="police__couleur-logo cinzel-police police__taille--16px hover-opacite">→ Devenir membre</p>
+							<form class="recherche__display recherche police__taille--16px">
+								<input class="cinzel-police" type="text" id="input-bar" name="input-bar" placeholder="Trouvez une enchère">
+								<span>
+									<i class="fa fa-search loupe-style hover-effect-transform hover-opacite"></i>
+								</span>
+
+							</form>
+						</div>
+						<div class="nav__logo">
+							<a href="accueil"><img class="img__logo hover-opacite hover-effect-transform" src="./assets/img/png/LS-logo.png" alt="Logo Stampee"></a>
+						</div>
+					</div>
+				</div>
+			</nav>
+
+
+			{{ include(templateMain) }}
+
+			<!-- ******** FOOTER ************ -->
+			<footer class="nav__superieur-background-color">
+				<nav class="conteneur">
+
+					<div class="footer__top-nav">
+						<a class="footer__link hover-opacite hover-effect-transform police__taille--20px" href="#">Nouveautés</a>
+						<a class="footer__link hover-opacite hover-effect-transform police__taille--20px" href="#">FAQs</a>
+						<a class="footer__link hover-opacite hover-effect-transform police__taille--20px" href="#">Livraison & retours</a>
+						<a class="footer__link hover-opacite hover-effect-transform police__taille--20px" href="#">Service client</a>
+						<a class="footer__link hover-opacite hover-effect-transform police__taille--20px" href="#">Stampee</a>
+					</div>
+
+					<div class="footer__nav">
+						<div class="">
+							<a href="catalogue"><img class="img__logo hover-opacite hover-effect-transform" src="./assets/img/png/LS-logo-footer.png" alt="Logo Stampee"></a>
+						</div>
+						<div>
+							<p class="police__taille--25px">Suivez-nous</p>
+							<ul>
+								<li><a class="hover-effect hover-effect-transform" href="#" aria-label="lien facebook" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+								<li><a class="hover-effect hover-effect-transform" href="#" aria-label="lien instagram" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+								<li><a class="hover-effect hover-effect-transform" href="#" aria-label="lien youtube" target="_blank"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
+							</ul>
+						</div>
+						<div>
+							<p class="police__taille--25px">Actualités</p>
+							<ul>
+								<li><a class="hover-effect hover-effect-transform" href="#" target="_blank">Timbres</a></li>
+								<li><a class="hover-effect hover-effect-transform" href="#" target="_blank">Enchères</a></li>
+								<li><a class="hover-effect hover-effect-transform" href="#" target="_blank">Bridge</a></li>
+							</ul>
+						</div>
+						<div>
+							<p class="police__taille--25px">Contact & Support</p>
+							<ul>
+								<li><a class="hover-effect hover-effect-transform" href="#" target="_blank">Trouver l’enchère désirée</a></li>
+								<li><a class="hover-effect hover-effect-transform" href="#" target="_blank">Comment placer une offre</a></li>
+								<li><a class="hover-effect hover-effect-transform" href="#" target="_blank">Contactez le Webmestre</a></li>
+							</ul>
+						</div>
+						<div>
+							<p class="police__taille--25px hover-opacite">Abonnez-vous à notre infolette</p>
+							<ul>
+								<li class="border-bottom">
+									<input aria-label="entrez votre adresse courriel" type="email" value="" name="EMAIL" class="" placeholder="Adresse courriel">
+									<input class="cinzel-police bouton-voir-inscription" type="submit" value="M'inscrire">
+									<br><br>
+								</li>
+								<li class="hero__texte-beige">
+									<br>
+									Londres, Royaume-Uni
+									<br>
+									<br>
+									+44 303 123 7300
+									<br>
+									info@lordstampee.com
+								</li>
+							</ul>
+						</div>
+					</div>
+				</nav>
+			</footer>
+		</body>
+	</body>
+</html>

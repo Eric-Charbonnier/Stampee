@@ -1,0 +1,36 @@
+.filtres {
+  background-color: whitesmoke;
+  width: 225px;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: rgb(0 0 0 / 40%) 0px 2px 4px, rgb(0 0 0 / 30%) 0px 7px 13px -3px,
+    rgb(0 0 0 / 20%) 0px -3px 0px inset;
+}
+
+.filtres__aside--titre {
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.filtres__prix--input {
+  /* margin-top: 10px; */
+  width: 70px;
+}
+
+.filtres__display {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+@media screen and (max-width: 850px) {
+  .grid_section_wrapper {
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+
+  .filtres__display {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+}

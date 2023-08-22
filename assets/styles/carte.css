@@ -1,0 +1,166 @@
+.cartes__boite {
+  display: flex;
+  /* flex-wrap: wrap; */
+  gap: 5px;
+  padding-top: 3rem;
+  padding-bottom: 5rem;
+}
+
+.carte__style {
+  background-color: #fdf8ee;
+  color: black;
+  border-radius: 10px;
+  box-shadow: 3px 2px 14px hsl(0deg 0% 100% / 20%);
+  text-decoration: none;
+  font-size: 1rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.carte__style:hover {
+  background-color: whitesmoke;
+  transform: translateY(-5px);
+}
+
+.carte__contenu {
+  padding: 1rem;
+}
+
+.carte__titre {
+  margin-bottom: 15px;
+  color: #2f3c72;
+}
+
+.carte__image {
+  background-color: black;
+  height: 125px;
+  background-size: cover;
+}
+
+.carte__width {
+  min-width: 210px;
+  box-shadow: rgb(0 0 0 / 40%) 0px 2px 4px, rgb(0 0 0 / 30%) 0px 7px 13px -3px,
+    rgb(0 0 0 / 20%) 0px -3px 0px inset;
+  /* idée de box shadow trouvé sur https://getcssscan.com/css-box-shadow-examples */
+}
+
+.carte__bottom {
+  margin-bottom: 20px;
+}
+
+.carte__bouton-miser {
+  background-color: var(--bleuFonceBoutons);
+  border: 1px solid var(--beigeBoutons);
+  color: var(--beigeBoutons);
+  font-size: 16px;
+  text-transform: uppercase;
+  padding: 20px;
+  width: 285px;
+}
+
+.carte__bouton-favoris {
+  background-color: #efe8f4;
+  color: var(--bleuFonceBoutons);
+  border: 1px solid var(--bleuFonceBoutons);
+  cursor: pointer;
+  font-size: 14px;
+  padding: 10px;
+  width: 285px;
+}
+
+.carte__bouton-favoris:hover {
+  background-color: #d7c6e4;
+  border: 1px solid var(--bleuFonceBoutons);
+  color: #7a5700;
+}
+
+.cartes img {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  object-fit: contain;
+  height: fit-content;
+}
+
+.cartes article {
+  max-width: 350px;
+  min-width: 250px;
+  background-color: #f0e8d4;
+  box-shadow: rgb(0 0 0 / 40%) 0px 2px 4px, rgb(0 0 0 / 30%) 0px 7px 13px -3px,
+    rgb(0 0 0 / 20%) 0px -3px 0px inset;
+  transition: 0.3s;
+}
+
+.cartes h3 {
+  margin: 25px;
+}
+
+.cartes h4 {
+  text-align: center;
+}
+
+.cartes .bouton {
+  max-width: 10em;
+  margin-top: 40px;
+}
+
+.catalogue--cartes {
+  margin-left: 200px;
+  padding: 1px 16px;
+}
+
+.fleche__carrousel {
+  display: flex;
+  max-width: 43px;
+  cursor: pointer;
+  align-items: center;
+}
+
+.fleche__carrousel--gauche {
+  display: flex;
+  max-width: 43px;
+  cursor: pointer;
+  align-items: center;
+  margin-right: 10px;
+}
+
+.fleche__carrousel--droite {
+  display: flex;
+  max-width: 43px;
+  cursor: pointer;
+  align-items: center;
+  margin-left: 10px;
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: space-between;
+  flex-basis: calc(100% / 5 - 20px);
+  min-width: 240px;
+  flex-grow: 0;
+  padding: 15px;
+  box-shadow: 0 5px 15px #00000017;
+  transition: transform 0.1s linear, box-shadow 0.1s linear;
+  border-radius: 5px;
+  gap: 10px;
+}
+
+.card__horizontal {
+  padding: 0.75rem;
+  margin-bottom: 2rem;
+  border: 0;
+  flex-basis: 33.333%;
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+
+@media screen and (max-width: 850px) {
+  .cartes article {
+    min-width: 80%;
+  }
+  /* .grid {
+    justify-content: space-around;
+  } */
+}

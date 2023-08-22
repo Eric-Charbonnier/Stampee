@@ -1,0 +1,15 @@
+<section class="courriel__style">
+  <h1>Bonjour  {{ oUtilisateur.utilisateur_prenom }} {{ oUtilisateur.utilisateur_nom }},</h1>
+
+  <p>Nous avons le plaisir de vous transmettre votre identifiant de connexion et votre mot de passe pour accéder à l'administration de notre site Le Méliès.</p>
+  
+  <h3>Identifiant: <strong>{{ oUtilisateur.utilisateur_courriel }}</strong></h3>
+  <h3>Mot de passe: <strong>{{ oUtilisateur.utilisateur_mdp }}</strong></h3>
+
+  <h4><a href="http://{{ http_host }}{{ constant('Routeur::BASE_URI') }}admin">Cliquez sur ce lien pour accéder à notre interface d'administration.</a></h4>
+  <br>
+  <p>Cordialement,</p>
+  <p>Support Technique</p>
+  <br>
+  <div id="logo">Le Méliès</div>
+</section>

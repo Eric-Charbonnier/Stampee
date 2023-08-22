@@ -1,0 +1,58 @@
+{# // <script>
+// 	history.pushState({}, '', 'admin?entite=utilisateur')
+// </script> #}
+
+<div class="enchere-box">
+	<h1>Modifiez votre enchère</h1>
+	<h4>Remplissez les informations ci-dessous afin de modifier votre timbre en enchère</h4>
+	<form enctype="multipart/form-data" action="membre?entite=enchere&action=m" method="POST">
+		<input type="hidden" name="utilisateur_id" value={{ utilisateur.utilisateur_id }}>
+    <input type="hidden" name="enchere_id" value={{ enchere.Enchere_enchere_id }}>
+    <label>Lot</label>
+		<input name="timbre_lot" type="number" value="{{ enchere.timbre_lot }}" placeholder="">
+		<label>Titre</label>
+		<input name="timbre_titre" type="text" value="{{ enchere.timbre_titre }}" placeholder="">
+		<label>Description</label>
+		<input name="timbre_description" type="text" value="{{ enchere.timbre_description }}" placeholder="">
+		<label>Date d'acquisition</label>
+		<input name="timbre_date" type="date" value="{{ enchere.timbre_date }}" placeholder="">
+		<label>Date début d'enchère</label>
+		<input name="enchere_debut" type="date" value="{{ enchere.enchere_debut }}" placeholder="">
+		<label>Date fin d'enchère</label>
+		<input name="enchere_fin" type="date" value="{{ enchere.enchere_fin }}" placeholder="">
+		<label>Prix</label>
+		<input name="timbre_prix" type="number" min="1" step="any" value="{{ enchere.timbre_prix }}" placeholder="">
+		<label>Conditions</label>
+		<select name="timbre_condition" class="recherche-select" value="{{ enchere.timbre_condition }}">
+			<option selected value="tous">Toutes les conditions</option>
+			<option value="parfaite">Parfaite</option>
+			<option value="excellente">Excellente</option>
+			<option value="bonne">Bonne</option>
+			<option value="moyenne">Moyenne</option>
+			<option value="mauvaise">Mauvaise</option>
+		</select>
+		<label>Pays</label>
+		<select name="timbre_pays" class="recherche-select" value="{{ enchere.timbre_pays }}">
+			<option selected value="">Tous les pays</option>
+			<option value="royaume-uni">Royaume-Uni</option>
+			<option value="etats-unis">États-unis</option>
+			<option value="canada">Canada</option>
+			<option value="australie">Australie</option>
+			<option value="chine">Chine</option>
+			<option value="france">France</option>
+			<option value="espagne">Espagne</option>
+		</select>
+		<br><br>
+		Nom de l'image:
+		<input name="nom_fichier" type="text">
+		<br>
+		<br>
+		Envoyez l'image :
+		<input name="userfile" type="file" value="{{ enchere.image_url }}">
+
+		<input
+		class="submit cinzel-police bouton-voir-catalogue bouton" type="submit" value="Soumettre">
+	<!-- <closeform></closeform> -->
+	</form>
+
+</div>

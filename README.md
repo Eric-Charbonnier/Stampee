@@ -24,6 +24,8 @@ STAMPEE s'adresse aux collectionneurs, amateurs et professionnels de timbres, ai
 
 Vous souhaitez rejoindre STAMPEE et explorer le monde fascinant des enchères de timbres ? Visitez notre site et créez votre compte membre dès aujourd'hui.
 
+[Visitez le site Stampee](https://www.eric.lesdeuxsauces.com/stampee/)
+
 ---
 
 STAMPEE est plus qu'une plateforme d'enchères; c'est une communauté de passionnés prêts à partager leur amour pour les timbres. Rejoignez-nous et faites partie de cette expérience unique.
